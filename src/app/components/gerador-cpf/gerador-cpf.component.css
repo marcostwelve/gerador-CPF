@@ -1,0 +1,54 @@
+
+.container {
+    height: 100vh;
+}
+
+.cpf-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cpf-card {
+    width: 300px;
+    text-align: center;
+    padding: 15px;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    margin: 5px;
+}
+
+.cpf-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.btn_trash {
+    color: red;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.title {
+    text-align: center;
+}
+
+.close-button {
+    margin-left: auto;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    mat-sidenav {
+        width: 100vw;
+    }
+}

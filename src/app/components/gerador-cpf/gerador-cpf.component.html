@@ -1,0 +1,42 @@
+
+
+<mat-sidenav-container class="container">
+
+    <mat-sidenav #sidenav [mode]="mode" opened="opened">
+        <mat-toolbar color="primary">
+            <span>CPFs Gerados</span>
+            <button mat-icon-button (click)="sidenav.toggle()" class="close-button">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-list>
+            <mat-list-item *ngFor="let cpf of cpfs; let i = index">
+                <h3 mat-line>{{cpf}}</h3>
+                <span class="btn_trash" (click)="removerCPF(i)">
+                    Excluir
+                </span>
+            </mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+
+
+    <!-- Conteúdo Principal -->
+    <mat-sidenav-content class="content">
+        <mat-toolbar color="primary" class="toolbar">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="title">Gerador de CPF</span>
+            <button mat-raised-button color="warn" (click)="logout()">Sair</button>
+        </mat-toolbar>
+
+        <div class="cpf-container">
+            <mat-card class="cpf-card">
+                <h2>CPF Gerado</h2>
+                <p class="cpf-text">{{ cpf }}</p>
+                <button mat-raised-button color="primary" (click)="gerarCPF()">Gerar CPF</button>
+                <button mat-raised-button color="accent" (click)="copiarCPF()">Copiar CPF</button>
+            </mat-card>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
